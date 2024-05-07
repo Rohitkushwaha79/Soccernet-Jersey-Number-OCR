@@ -1,6 +1,4 @@
 # Soccernet-Jersey-Number-OCR
-# Soccernet Jersey Number OCR
-
 ## Overview
 This repository contains experiments conducted for Optical Character Recognition (OCR) of jersey numbers in soccer images. Various models were trained and evaluated using different datasets, and their performance on test and challenge datasets is reported.
 
