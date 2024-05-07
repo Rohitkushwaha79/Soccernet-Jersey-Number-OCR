@@ -36,7 +36,7 @@ This repository contains experiments conducted for Optical Character Recognition
 
 ## Experiment Results
 
-| Model        | Train Dataset Used           | Test Dataset Used | Accuracy on Train Dataset | Accuracy on Test Dataset | Accuracy on Challenge Dataset |
+| Model        | Train Dataset Used           | Test Dataset Used | Accuracy on Soccernet Train Dataset | Accuracy on Soccernet Test Dataset | Accuracy on Challenge Dataset |
 |--------------|-------------------------------|-------------------|---------------------------|--------------------------|-------------------------------|
 | CTC CRNN     | SVHN                          | Soccernet         | 39%                       | -                        | -                             |
 | CNN          | Soccernet                     | Soccernet         | -                         | 24%                      | -                             |
