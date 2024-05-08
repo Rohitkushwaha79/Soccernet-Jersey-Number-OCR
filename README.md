@@ -1,7 +1,19 @@
 # Soccernet-Jersey-Number-OCR
 ## Overview
-This repository contains experiments conducted for Optical Character Recognition (OCR) of jersey numbers in soccer images. Various models were trained and evaluated using different datasets, and their performance on test and challenge datasets is reported.
+This repository presents experiments conducted for Optical Character Recognition (OCR) of jersey numbers in soccer images. The experiments involve training and evaluating various models using datasets from both SVHN and SoccerNet Jersey Number Recognition. While models were trained on both datasets, the evaluation focused on the SoccerNet Jersey Number Recognition dataset. The performance of these models was assessed on the SoccerNet Jersey Number Recognition test and challenge datasets, with results reported accordingly.
 
+## Getting Started
+
+1. **Clone the Repository:**
+
+   ```bash
+   git clone https://github.com/Rohitkushwaha79/Soccernet-Jersey-Number-OCR.git
+
+2. **Install Dependencies**
+   * Create a virtual environment to manage project dependencies effectively (recommended).
+   * Install the required libraries using pip install -r requirements.txt.
+   * Ensure you have TensorFlow, Keras, and other necessary libraries listed in requirements.txt.
+  
 ## Experiments
 
 ### Experiment 1: CTC CRNN Model on SVHN Dataset
