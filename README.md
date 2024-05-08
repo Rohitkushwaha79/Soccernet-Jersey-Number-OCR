@@ -11,7 +11,7 @@ This repository presents experiments conducted for Optical Character Recognition
 
 2. **Install Dependencies**
    * Create a virtual environment to manage project dependencies effectively (recommended).
-   * Install the required libraries using pip install -r requirements.txt.
+   * Install the required libraries using `pip install -r requirements.txt`.
    * Ensure you have TensorFlow, Keras, and other necessary libraries listed in requirements.txt.
   
 ## Experiments
