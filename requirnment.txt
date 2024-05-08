@@ -1,0 +1,9 @@
+tensorflow==2.13.0
+opencv-python
+matplotlib
+pandas
+numpy
+mat73
+easyocr
+ultralytics
+
