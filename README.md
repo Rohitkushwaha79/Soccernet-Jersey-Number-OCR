@@ -91,13 +91,13 @@ python src/script/inference_on_soccernet_challenge_dataset_by_EasyOCR.py
 ### Experiment 1: CTC CRNN Model on SVHN Dataset
 - **Description:** Trained a CTC (Connectionist Temporal Classification) CRNN (Convolutional Recurrent Neural Network) model on the Street View House Numbers (SVHN) dataset.
 - **Train Dataset Used:** SVHN dataset
-- **Test Dataset Used:** Soccernet test dataset
+- **Test Dataset Used:** Custom Soccernet test dataset
 - **Accuracy on Test Dataset:** 39%
 
-### Experiment 2: CNN Model on Soccernet Dataset
+### Experiment 2: CNN Model on Custom Soccernet Dataset
 - **Description:** Trained a Convolutional Neural Network (CNN) model on the Soccernet training dataset.
-- **Train Dataset Used:** Soccernet training dataset
-- **Test Dataset Used:** Soccernet test dataset
+- **Train Dataset Used:** Custom Soccernet training dataset
+- **Test Dataset Used:** Custom Soccernet test dataset
 - **Accuracy on Test Dataset:** 24%
 
 ### Experiment 3: OCR with EasyOCR on Soccernet Challenge Dataset
@@ -113,16 +113,16 @@ python src/script/inference_on_soccernet_challenge_dataset_by_EasyOCR.py
     1. Extracting jersey images using human pose estimation model (YOLOv8) and logic from Soccernet train and test datasets.
     2. Manual cleaning of the extracted datasets.
     3. Data preprocessing.
-    4. Merging SVHN and Soccernet data.
-  - **Accuracy on Training Dataset:** 95%
-  - **Accuracy on Test Dataset:** 91%
-  - **Accuracy on Challenge Dataset:** 69%
+    4. Merging SVHN and Custom Soccernet data.
+  - **Accuracy on Custom Training Dataset:** 98%
+  - **Accuracy on Custom Test Dataset:** 93%
+  - **Accuracy on Challenge Dataset:** 71%
 
 ## Experiment Results
 
-| Model        | Train Dataset Used           | Test Dataset Used | Accuracy on Soccernet Train Dataset | Accuracy on Soccernet Test Dataset | Accuracy on Challenge Dataset |
+| Model        | Train Dataset Used           | Test Dataset Used | Accuracy on Custom Soccernet Train Dataset | Accuracy on Custom Soccernet Test Dataset | Accuracy on Soccernet Jersey Number Recognition Challenge Dataset |
 |--------------|-------------------------------|-------------------|---------------------------|--------------------------|-------------------------------|
 | CTC CRNN     | SVHN                          | Soccernet         | 39%                       | -                        | -                             |
 | CNN          | Soccernet                     | Soccernet         | -                         | 24%                      | -                             |
 | EasyOCR      | -                             | Soccernet Challenge | -                       | -                        | 58%                           |
-| CTC CRNN     | SVHN + Soccernet              | Soccernet         | 98%                       | 93%                      | 69%                           |
+| CTC CRNN     | SVHN + Soccernet              | Soccernet         | 98%                       | 93%                      | 71%                           |
