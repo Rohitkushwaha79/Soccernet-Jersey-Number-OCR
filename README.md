@@ -1,8 +1,47 @@
 # Soccernet-Jersey-Number-OCR
 ## Overview
 This repository presents experiments conducted for Optical Character Recognition (OCR) of jersey numbers in soccer images. The experiments involve training and evaluating various models using datasets from both SVHN and SoccerNet Jersey Number Recognition. While models were trained on both datasets, the evaluation focused on the SoccerNet Jersey Number Recognition dataset. The performance of these models was assessed on the SoccerNet Jersey Number Recognition test and challenge datasets, with results reported accordingly.
+## Table of Contents
+  - [Structure](#structure)
+  - [Installation](#installation)
+  - [Usage](#usage)
+    - [Data Download](#data-download)
+    - [Create Custom Soccernet Jersey Dataset](#2-create-custom-soccernet-jersey-dataset)
+    - [Preprocessing](#2-preprocessing)
+    - [Model Training](#3-model-training)
+    - [Evaluation](#4-evaluation)
+    - [Inference](#5-inference)
+  - [Experiments](#experiments)
+    - [Experiment 1: CTC CRNN Model on SVHN Dataset](#experiment-1-ctc-crnn-model-on-svhn-dataset)
+    - [Experiment 2: CNN Model on Soccernet Dataset](#experiment-2-cnn-model-on-soccernet-dataset)
+    - [Experiment 3: OCR with EasyOCR on Soccernet Challenge Dataset](#experiment-3-ocr-with-easyocr-on-soccernet-challenge-dataset)
+    - [Experiment 4: CTC CRNN Model on Merged Dataset](#experiment-4-ctc-crnn-model-on-merged-dataset)
+  - [Experiment Results](#experiment-results)
+## Structure
+- **Data:** Contains datasets used for training and evaluation, including SVHN and Soccernet datasets.
+- **Models:** Holds pre-trained models and checkpoints.
+- **Notebooks:** Jupyter notebooks for experimenting and exploring the data.
+- **Src:** Source code directory containing the following subdirectories:
+  - **Data:**
+    - [svhn_data_loader.py](src/data/svhn_data_loader.py) :Loads SVHN dataset
+    - [soccernet_data_loader.py](src/data/soccernet_data_loader.py) :Loads Custuon Soccernet Jerney number dataset
+  - **Layer:**
+    - [ctc_layer.py](src/layer/ctc_layer.py) :CTC loss layer implementation
+  - **Models:**
+    - [model.py](src/models/model.py): Contains code for the CTC-CRNN model.
+  - **Script:**
+    - [evaluate.py](src/script/evaluate.py): Script for evaluating the trained model on the Soccernet test dataset.
+    - [test.py](src/script/test.py): Script for testing the model on images.
+    - [train.py](src/script/train.py): Script for training the model on the merged training dataset.
+    - [inference_on_soccernet_challenge_dataset_by_trained_model.py](src/script/inference_on_soccernet_challenge_dataset_by_trained_model.py): Script for running inference on the Soccernet Challenge dataset using the trained CTC-CRNN model.
+    - [inference_on_soccernet_challenge_dataset_by_EasyOCR.py](src/script/inference_on_soccernet_challenge_dataset_by_EasyOCR.py): Script for running inference on the Soccernet Challenge dataset using EasyOCR.
+  - **Utils:**
+    - [custom_ctc_accuracy.py](src/utils/custom_ctc_accuracy.py)
+    - [predict_majority_jersey_no_for_playerid.py](src/utils/predict_majority_jersey_no_for_playerid.py)
+    - [merge_datasets.py](src/utils/merge_datasets.py)
+    - [extract_jersey.py](src/utils/extract_jersey.py)
 
-## Getting Started
+## Installation
 
 1. **Clone the Repository:**
 
@@ -12,8 +51,41 @@ This repository presents experiments conducted for Optical Character Recognition
 2. **Install Dependencies**
    * Create a virtual environment to manage project dependencies effectively (recommended).
    * Install the required libraries using `pip install -r requirements.txt`.
-   * Ensure you have TensorFlow, Keras, and other necessary libraries listed in requirements.txt.
-  
+
+
+## Usage
+### Data Download
+- Download the SVHN dataset from [link](https://www.kaggle.com/datasets/stanfordu/street-view-house-numbers).
+- Download the Soccernet dataset from [link](https://www.soccer-net.org/data#h.b1lf96jmxlcc).
+- 
+### 2. Create Custom Soccernet Jersey Dataset
+- Generate the custom Soccernet jersey dataset using the notebook [SoccerNet_Jersey_Extraction_Dataset_Creation.ipynb](notebooks/SoccerNet_Jersey_Extraction_Dataset_Creation.ipynb).
+
+### 2. Preprocessing
+- Preprocess the datasets:
+  - Run [svhn_data_loader.py](src/data/svhn_data_loader.py) to load and preprocess the SVHN dataset.
+  - Run [soccernet_data_loader.py](src/data/soccernet_data_loader.py) to load and preprocess the Custom Soccernet dataset(contains jersey extracts with their corresponding label as their folder name). 
+
+### 3. Model Training
+- Train the model on the merged train dataset (SVHN and Custom Soccernet training datasets for jersey number recognition):
+```bash
+python src/script/train.py
+```
+### 4. Evaluation
+- Evaluate the trained model on the Soccernet jersey number recognition test dataset:
+```bash
+python src/script/evaluate.py
+```
+
+### 5. Inference
+- Run inference on the Soccernet Challenge dataset using the trained CTC-CRNN model:
+```bash
+python src/script/inference_on_soccernet_challenge_dataset_by_trained_model.py
+```
+- Alternatively, run inference using EasyOCR:
+```bash
+python src/script/inference_on_soccernet_challenge_dataset_by_EasyOCR.py
+```
 ## Experiments
 
 ### Experiment 1: CTC CRNN Model on SVHN Dataset
