@@ -57,7 +57,7 @@ This repository presents experiments conducted for Optical Character Recognition
 ### Data Download
 - Download the SVHN dataset from [link](https://www.kaggle.com/datasets/stanfordu/street-view-house-numbers).
 - Download the Soccernet dataset from [link](https://www.soccer-net.org/data#h.b1lf96jmxlcc).
-- 
+  
 ### 2. Create Custom Soccernet Jersey Dataset
 - Generate the custom Soccernet jersey dataset using the notebook [SoccerNet_Jersey_Extraction_Dataset_Creation.ipynb](notebooks/SoccerNet_Jersey_Extraction_Dataset_Creation.ipynb).
 
